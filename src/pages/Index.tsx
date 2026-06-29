@@ -48,7 +48,7 @@ const masters = [
     role: 'Эксперт Барбер',
     desc: 'Стрижка от 1 800 ₽',
     rating: '5.0',
-    reviews: '78 оценок',
+    reviews: '150 оценок',
     img: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9a9cd6d3-a43d-4538-a2eb-af57b45a96e7.jpg',
   },
   {
@@ -56,7 +56,7 @@ const masters = [
     role: 'Премиум Барбер',
     desc: 'Стрижка от 2 300 ₽',
     rating: '5.0',
-    reviews: '84 оценки',
+    reviews: '150 оценок',
     img: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/13f185d0-68a3-49ec-880b-95a6bd57848e.jpg',
   },
 ];
