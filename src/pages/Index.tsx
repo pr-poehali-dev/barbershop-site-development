@@ -119,21 +119,21 @@ const Index = () => {
           <img src={HERO_IMG} alt="Интерьер КласикО" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
-        <div className="container relative z-10 animate-fade-in">
+        <div className="container relative z-10 animate-fade-in md:pl-24">
           <p className="font-display uppercase tracking-[0.4em] text-white/60 text-sm mb-6">Барбершоп</p>
-          <h1 className="font-display font-600 uppercase leading-[0.9] text-6xl md:text-9xl tracking-tight mb-8 text-white">
-            Класси<br />ческий<br /><span className="text-white/50">стиль</span>
+          <h1 className="font-display font-600 uppercase leading-[0.9] text-5xl md:text-7xl tracking-tight mb-8 text-white">
+            Классический<br /><span className="text-white/50">стиль</span>
           </h1>
-          <p className="text-white/70 text-lg max-w-md mb-10 text-balance">
+          <p className="text-white/70 text-base max-w-sm mb-10 text-balance">
             Чистая эстетика и точные линии. Никакой суеты — только вы, мастер и идеальная стрижка.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button onClick={() => scrollTo('booking')} size="lg"
-              className="rounded-none font-display uppercase tracking-widest bg-white text-foreground hover:bg-white/90 h-14 px-10">
+              className="rounded-none font-display uppercase tracking-widest bg-white text-foreground hover:bg-white/90 h-12 px-8">
               Записаться
             </Button>
             <Button onClick={() => scrollTo('services')} size="lg"
-              className="rounded-none font-display uppercase tracking-widest bg-transparent border border-white text-white hover:bg-white hover:text-foreground h-14 px-10">
+              className="rounded-none font-display uppercase tracking-widest bg-transparent border border-white text-white hover:bg-white hover:text-foreground h-12 px-8">
               Услуги
             </Button>
           </div>
