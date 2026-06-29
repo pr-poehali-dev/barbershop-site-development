@@ -25,12 +25,18 @@ const nav = [
 ];
 
 const services = [
-  { name: 'Мужская стрижка', desc: 'Классика или модный фейд под форму головы', price: '2 000 ₽', icon: 'Scissors' },
-  { name: 'Стрижка бороды', desc: 'Моделирование, окантовка и уход', price: '1 200 ₽', icon: 'User' },
-  { name: 'Королевское бритьё', desc: 'Опасная бритва, горячее полотенце', price: '1 800 ₽', icon: 'Sparkles' },
-  { name: 'Камуфляж седины', desc: 'Естественный тон без эффекта краски', price: '1 500 ₽', icon: 'Droplet' },
-  { name: 'Отец + сын', desc: 'Две стрижки в четыре руки', price: '3 200 ₽', icon: 'Users' },
-  { name: 'Стайлинг и укладка', desc: 'Подбор укладки и продукта под вас', price: '800 ₽', icon: 'Wind' },
+  { name: 'Мужская стрижка', desc: 'Стрижка ножницами и машинкой, отлично подойдёт обладателям любого типа волос', price: '1 700 ₽', icon: 'Scissors' },
+  { name: 'Стрижка машинкой (1-2 насадки)', desc: 'Быстрая и качественная стрижка для тех, кто ценит время и чёткость', price: '1 200 ₽', icon: 'Zap' },
+  { name: 'Стрижка ножницами', desc: 'Максимально естественный результат без эффекта «только из армии»', price: '2 300 ₽', icon: 'Scissors' },
+  { name: 'Стрижка + моделирование бороды', desc: 'Комплексный мужской уход. Приводим в порядок голову и лицо за один визит', price: '3 400 ₽', icon: 'Sparkles' },
+  { name: 'Моделирование бороды / бритьё', desc: 'Никакого раздражения, только идеальная гладкость и точность линий', price: '1 600 ₽', icon: 'User' },
+  { name: 'Детская стрижка', desc: 'Приводите своих юных мужчин к нам — поход в барбершоп станет удовольствием', price: '1 400 ₽', icon: 'Star' },
+  { name: 'Отец + сын', desc: 'Двойная порция стиля и мужского единства. Специальная цена при совместном визите', price: '3 700 ₽', icon: 'Users' },
+  { name: 'Коррекция бровей', desc: 'Приводим брови в порядок по-мужски: аккуратно, быстро и естественно', price: '400 ₽', icon: 'Eye' },
+  { name: 'Детокс бороды и кожи лица', desc: 'Профессиональные составы убирают грибок и восстанавливают кожу', price: '1 100 ₽', icon: 'Droplet' },
+  { name: 'Уход за кожей головы LUXINA', desc: 'Не просто мытьё — полноценная СПА-процедура для кожи головы', price: '1 300 ₽', icon: 'Droplets' },
+  { name: 'Уход LUXINA с массажем', desc: 'Волосы очищаются, кожа успокаивается, массаж снимает напряжение', price: '1 700 ₽', icon: 'Heart' },
+  { name: 'Уход за лицом LONDON Grooming', desc: 'Глубокая детокс-программа, которая возвращает коже молодость', price: '1 900 ₽', icon: 'Shield' },
 ];
 
 
@@ -63,7 +69,7 @@ const Index = () => {
                 {n.label}
               </button>
             ))}
-            <Button onClick={() => scrollTo('booking')} className="rounded-none font-display uppercase tracking-widest bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button onClick={() => scrollTo('booking')} className="rounded-none font-display uppercase tracking-widest bg-foreground text-background hover:bg-foreground/80">
               Запись
             </Button>
           </nav>
@@ -94,16 +100,16 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
         <div className="container relative z-10 animate-fade-in">
-          <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-6">Барбершоп · с 2014 года</p>
+          <p className="font-display uppercase tracking-[0.4em] text-white/60 text-sm mb-6">Барбершоп</p>
           <h1 className="font-display font-600 uppercase leading-[0.9] text-6xl md:text-9xl tracking-tight mb-8 text-white">
-            Класси<br />ческий<br /><span className="text-accent">стиль</span>
+            Класси<br />ческий<br /><span className="text-white/50">стиль</span>
           </h1>
           <p className="text-white/70 text-lg max-w-md mb-10 text-balance">
             Чистая эстетика и точные линии. Никакой суеты — только вы, мастер и идеальная стрижка.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button onClick={() => scrollTo('booking')} size="lg"
-              className="rounded-none font-display uppercase tracking-widest bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10">
+              className="rounded-none font-display uppercase tracking-widest bg-white text-foreground hover:bg-white/90 h-14 px-10">
               Записаться
             </Button>
             <Button onClick={() => scrollTo('services')} size="lg"
@@ -130,7 +136,7 @@ const Index = () => {
             </div>
           </div>
           <div className="md:pl-8">
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Наше место</p>
+            <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Наше место</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight mb-8">О нас</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               КласикО — мужской барбершоп с атмосферой настоящего мужского клуба. Стильный интерьер, профессиональные мастера и внимание к каждой детали.
@@ -145,7 +151,7 @@ const Index = () => {
                 { num: '3', label: 'мастера' },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-3xl font-600 text-accent">{s.num}</p>
+                  <p className="font-display text-3xl font-600 text-foreground">{s.num}</p>
                   <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">{s.label}</p>
                 </div>
               ))}
@@ -159,7 +165,7 @@ const Index = () => {
         <div className="container">
           <div className="flex items-end justify-between mb-16 flex-wrap gap-4">
             <div>
-              <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Прайс</p>
+              <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Прайс</p>
               <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Услуги</h2>
             </div>
             <p className="text-muted-foreground max-w-xs">Фиксированные цены без скрытых доплат. Уход в подарок к каждой стрижке.</p>
@@ -167,7 +173,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
             {services.map((s) => (
               <div key={s.name} className="bg-background p-8 group hover:bg-foreground hover:text-background transition-colors duration-300">
-                <Icon name={s.icon} size={32} className="text-accent mb-6" />
+                <Icon name={s.icon} size={32} className="text-muted-foreground mb-6 group-hover:text-background/60" />
                 <div className="flex items-baseline justify-between mb-3 gap-4">
                   <h3 className="font-display uppercase text-xl tracking-wide">{s.name}</h3>
                   <span className="font-display text-lg whitespace-nowrap">{s.price}</span>
@@ -183,7 +189,7 @@ const Index = () => {
       <section id="gallery" className="py-24 md:py-32 bg-secondary border-t border-border">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Наши работы</p>
+            <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Наши работы</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Галерея</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -206,14 +212,14 @@ const Index = () => {
       <section id="reviews" className="py-24 md:py-32 border-t border-border">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Что говорят</p>
+            <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Что говорят</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Отзывы</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((r) => (
-              <div key={r.name} className="border border-border p-8 hover:border-accent transition-colors">
-                <div className="flex gap-1 mb-6 text-accent">
-                  {Array.from({ length: r.rate }).map((_, i) => <Icon key={i} name="Star" size={16} className="fill-accent" />)}
+              <div key={r.name} className="border border-border p-8 hover:border-foreground transition-colors">
+                <div className="flex gap-1 mb-6 text-foreground">
+                  {Array.from({ length: r.rate }).map((_, i) => <Icon key={i} name="Star" size={16} className="fill-foreground" />)}
                 </div>
                 <p className="text-foreground mb-8 leading-relaxed">«{r.text}»</p>
                 <p className="font-display uppercase tracking-widest text-sm text-muted-foreground">{r.name}</p>
@@ -227,7 +233,7 @@ const Index = () => {
       <section id="contacts" className="py-24 md:py-32 bg-foreground text-background border-t border-border">
         <div className="container grid md:grid-cols-2 gap-12 items-stretch">
           <div>
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Как нас найти</p>
+            <p className="font-display uppercase tracking-[0.4em] text-background/50 text-sm mb-4">Как нас найти</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight mb-10">Контакты</h2>
             <div className="space-y-6">
               {[
@@ -237,7 +243,7 @@ const Index = () => {
                 { icon: 'Mail', t: 'Почта', v: 'hello@forma.ru' },
               ].map((c) => (
                 <div key={c.t} className="flex items-start gap-4">
-                  <Icon name={c.icon} size={22} className="text-accent mt-1" />
+                  <Icon name={c.icon} size={22} className="text-background/60 mt-1" />
                   <div>
                     <p className="font-display uppercase text-xs tracking-widest text-background/50 mb-1">{c.t}</p>
                     <p className="text-lg">{c.v}</p>
@@ -262,21 +268,21 @@ const Index = () => {
       <section id="booking" className="py-24 md:py-32 border-t border-border bg-secondary">
         <div className="container max-w-2xl">
           <div className="text-center mb-12">
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Онлайн</p>
+            <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Онлайн</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Запись</h2>
           </div>
           <form className="grid gap-4" onSubmit={(e) => e.preventDefault()}>
-            <input placeholder="Ваше имя" className="bg-background border border-border px-5 h-14 outline-none focus:border-accent transition-colors" />
-            <input placeholder="Телефон" className="bg-background border border-border px-5 h-14 outline-none focus:border-accent transition-colors" />
+            <input placeholder="Ваше имя" className="bg-background border border-border px-5 h-14 outline-none focus:border-foreground transition-colors" />
+            <input placeholder="Телефон" className="bg-background border border-border px-5 h-14 outline-none focus:border-foreground transition-colors" />
             <div className="grid sm:grid-cols-2 gap-4">
-              <select className="bg-background border border-border px-5 h-14 outline-none focus:border-accent transition-colors text-muted-foreground">
+              <select className="bg-background border border-border px-5 h-14 outline-none focus:border-foreground transition-colors text-muted-foreground">
                 <option>Выберите услугу</option>
                 {services.map((s) => <option key={s.name}>{s.name}</option>)}
               </select>
-              <input type="date" className="bg-background border border-border px-5 h-14 outline-none focus:border-accent transition-colors text-muted-foreground" />
+              <input type="date" className="bg-background border border-border px-5 h-14 outline-none focus:border-foreground transition-colors text-muted-foreground" />
             </div>
             <Button type="submit" size="lg"
-              className="rounded-none font-display uppercase tracking-widest bg-accent text-accent-foreground hover:bg-accent/90 h-14 mt-2">
+              className="rounded-none font-display uppercase tracking-widest bg-foreground text-background hover:bg-foreground/80 h-14 mt-2">
               Записаться
             </Button>
           </form>
