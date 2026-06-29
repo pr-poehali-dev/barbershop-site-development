@@ -2,8 +2,15 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
-const HERO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/files/64b04d0d-984d-4e16-8b8d-c180975a4201.jpg';
-const CUT_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/files/c39bc8ee-44e8-45a6-bdb2-4f2ecec6b68e.jpg';
+const LOGO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/3e3201fa-2c61-4bd1-b56d-018fe8f2af80.jpeg';
+const HERO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9aa3e35b-8f0e-4aaa-89e6-3c518597ef48.jpeg';
+
+const gallery = [
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9aa3e35b-8f0e-4aaa-89e6-3c518597ef48.jpeg', label: 'Фейд + укладка' },
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/731c2ada-4908-46e4-90e7-2f9012e9f54f.jpeg', label: 'Камуфляж седины' },
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/8f2ef570-b9ff-482f-bd84-3e91de3c4213.jpeg', label: 'Классика' },
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/e178d934-4c3c-4de0-9a25-338874b7cd00.jpeg', label: 'Низкий фейд' },
+];
 
 const nav = [
   { id: 'services', label: 'Услуги' },
@@ -21,7 +28,7 @@ const services = [
   { name: 'Стайлинг и укладка', desc: 'Подбор укладки и продукта под вас', price: '800 ₽', icon: 'Wind' },
 ];
 
-const gallery = [HERO_IMG, CUT_IMG, HERO_IMG, CUT_IMG];
+
 
 const reviews = [
   { name: 'Артём К.', text: 'Лучший фейд в городе. Чисто, спокойно, без лишних разговоров — то, что нужно.', rate: 5 },
@@ -41,8 +48,8 @@ const Index = () => {
       {/* HEADER */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <button onClick={() => scrollTo('top')} className="font-display text-2xl font-700 tracking-[0.3em] uppercase">
-            КласикО
+          <button onClick={() => scrollTo('top')} className="flex items-center">
+            <img src={LOGO_IMG} alt="КласикО барбершоп" className="h-10 w-auto object-contain" />
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
@@ -98,7 +105,7 @@ const Index = () => {
             </div>
           </div>
           <div className="relative h-[420px] md:h-[600px] animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0 }}>
-            <img src={HERO_IMG} alt="Интерьер барбершопа" className="w-full h-full object-cover grayscale" />
+            <img src={HERO_IMG} alt="Мастер за работой" className="w-full h-full object-cover object-top" />
             <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 hidden md:block">
               <p className="font-display text-4xl font-700">4.9</p>
               <p className="text-xs uppercase tracking-widest">2 400+ отзывов</p>
@@ -140,10 +147,15 @@ const Index = () => {
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Галерея</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {gallery.map((src, i) => (
+            {gallery.map((item, i) => (
               <div key={i} className="relative overflow-hidden aspect-[3/4] group">
-                <img src={src} alt={`Работа ${i + 1}`}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+                <img src={item.src} alt={item.label}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500" />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-all duration-300 flex items-end">
+                  <span className="text-background font-display uppercase tracking-widest text-xs p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    {item.label}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -234,7 +246,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="bg-foreground text-background/60 py-12 border-t border-background/10">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="font-display text-xl tracking-[0.3em] uppercase text-background">КласикО</span>
+          <img src={LOGO_IMG} alt="КласикО" className="h-10 w-auto object-contain brightness-0 invert" />
           <p className="text-sm">© 2026 Барбершоп «КласикО». Все права защищены.</p>
           <div className="flex gap-5">
             {['Instagram', 'Send', 'Youtube'].map((s) => (
