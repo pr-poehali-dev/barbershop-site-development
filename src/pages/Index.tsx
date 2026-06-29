@@ -19,6 +19,7 @@ const gallery = [
 
 const nav = [
   { id: 'services', label: 'Услуги' },
+  { id: 'masters', label: 'Мастера' },
   { id: 'gallery', label: 'Галерея' },
   { id: 'reviews', label: 'Отзывы' },
   { id: 'contacts', label: 'Контакты' },
@@ -40,6 +41,25 @@ const services = [
 ];
 
 
+
+const masters = [
+  {
+    name: 'Иван',
+    role: 'Эксперт Барбер',
+    desc: 'Стрижка от 1 800 ₽',
+    rating: '5.0',
+    reviews: '78 оценок',
+    initials: 'И',
+  },
+  {
+    name: 'Аваз «Álvarez»',
+    role: 'Премиум Барбер',
+    desc: 'Стрижка от 2 300 ₽',
+    rating: '5.0',
+    reviews: '84 оценки',
+    initials: 'А',
+  },
+];
 
 const reviews = [
   { name: 'Артём К.', text: 'Лучший фейд в городе. Чисто, спокойно, без лишних разговоров — то, что нужно.', rate: 5 },
@@ -208,6 +228,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* MASTERS */}
+      <section id="masters" className="py-24 md:py-32 border-t border-border bg-secondary">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="font-display uppercase tracking-[0.4em] text-muted-foreground text-sm mb-4">Команда</p>
+            <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Мастера</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {masters.map((m) => (
+              <div key={m.name} className="bg-background border border-border p-8 flex flex-col items-center text-center hover:border-foreground transition-colors">
+                <div className="w-24 h-24 rounded-full bg-foreground text-background flex items-center justify-center font-display text-4xl mb-6">
+                  {m.initials}
+                </div>
+                <h3 className="font-display uppercase text-xl tracking-wide mb-1">{m.name}</h3>
+                <p className="text-muted-foreground text-sm mb-1">{m.role}</p>
+                <p className="text-muted-foreground text-sm mb-5">{m.desc}</p>
+                <div className="flex items-center gap-2 border-t border-border pt-5 w-full justify-center">
+                  <Icon name="Star" size={16} className="fill-foreground text-foreground" />
+                  <span className="font-display text-lg">{m.rating}</span>
+                  <span className="text-muted-foreground text-sm">· {m.reviews}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* REVIEWS */}
       <section id="reviews" className="py-24 md:py-32 border-t border-border">
         <div className="container">
@@ -236,26 +283,33 @@ const Index = () => {
             <p className="font-display uppercase tracking-[0.4em] text-background/50 text-sm mb-4">Как нас найти</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight mb-10">Контакты</h2>
             <div className="space-y-6">
-              {[
-                { icon: 'MapPin', t: 'Адрес', v: 'Москва, ул. Большая Никитская, 12' },
-                { icon: 'Clock', t: 'Часы работы', v: 'Ежедневно с 10:00 до 22:00' },
-                { icon: 'Phone', t: 'Телефон', v: '+7 (495) 123-45-67' },
-                { icon: 'Mail', t: 'Почта', v: 'hello@forma.ru' },
-              ].map((c) => (
-                <div key={c.t} className="flex items-start gap-4">
-                  <Icon name={c.icon} size={22} className="text-background/60 mt-1" />
-                  <div>
-                    <p className="font-display uppercase text-xs tracking-widest text-background/50 mb-1">{c.t}</p>
-                    <p className="text-lg">{c.v}</p>
-                  </div>
+              <div className="flex items-start gap-4">
+                <Icon name="MapPin" size={22} className="text-background/60 mt-1 shrink-0" />
+                <div>
+                  <p className="font-display uppercase text-xs tracking-widest text-background/50 mb-1">Адрес</p>
+                  <p className="text-lg">Москва, Перовское шоссе, 2 корп. 2</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-4">
+                <Icon name="Clock" size={22} className="text-background/60 mt-1 shrink-0" />
+                <div>
+                  <p className="font-display uppercase text-xs tracking-widest text-background/50 mb-1">Часы работы</p>
+                  <p className="text-lg">Ежедневно с 10:00 до 22:00</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Icon name="Phone" size={22} className="text-background/60 mt-1 shrink-0" />
+                <div>
+                  <p className="font-display uppercase text-xs tracking-widest text-background/50 mb-1">Телефон</p>
+                  <a href="tel:+79168324914" className="text-lg hover:text-background/70 transition-colors">+7 (916) 832-49-14</a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="min-h-[360px] grayscale contrast-125">
             <iframe
-              title="Карта барбершопа FORMA"
-              src="https://yandex.ru/map-widget/v1/?ll=37.601%2C55.756&z=16&pt=37.601,55.756,pm2rdm"
+              title="Барбершоп КласикО на карте"
+              src="https://yandex.ru/map-widget/v1/?ll=37.801%2C55.748&z=16&pt=37.801,55.748,pm2rdm&text=%D0%9F%D0%B5%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%81%D1%81%D0%B5%2C%202%20%D0%BA%D0%BE%D1%80%D0%BF.%202%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
               width="100%" height="100%" frameBorder="0"
               className="w-full h-full min-h-[360px] border border-background/20"
               allowFullScreen
