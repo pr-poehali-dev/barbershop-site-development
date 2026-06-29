@@ -139,8 +139,8 @@ const Index = () => {
           </div>
         </div>
         <div className="absolute bottom-8 right-8 bg-accent text-accent-foreground p-5 hidden md:block">
-          <p className="font-display text-4xl font-700 leading-none">4.9</p>
-          <p className="text-xs uppercase tracking-widest mt-1">2 400+ отзывов</p>
+          <p className="font-display text-4xl font-700 leading-none">5.0</p>
+          <p className="text-xs uppercase tracking-widest mt-1">150+ отзывов</p>
         </div>
       </section>
 
