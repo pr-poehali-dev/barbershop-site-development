@@ -3,13 +3,18 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
 const LOGO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/3e3201fa-2c61-4bd1-b56d-018fe8f2af80.jpeg';
-const HERO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9aa3e35b-8f0e-4aaa-89e6-3c518597ef48.jpeg';
+const HERO_IMG = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/7b350b2a-e80e-4318-9d30-71d7dfbc5b70.jpeg';
+const INTERIOR_1 = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/2905ddae-34e4-45fa-86c9-d57aceb0ad47.jpeg';
+const EXTERIOR_NIGHT = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/a730ec56-8fe6-4b6d-bce2-700e4b600aa6.jpeg';
+const EXTERIOR_DAY = 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/fd2ed102-e3a3-4558-9e60-ef91c47cb0ed.jpeg';
 
 const gallery = [
   { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9aa3e35b-8f0e-4aaa-89e6-3c518597ef48.jpeg', label: 'Фейд + укладка' },
   { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/731c2ada-4908-46e4-90e7-2f9012e9f54f.jpeg', label: 'Камуфляж седины' },
   { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/8f2ef570-b9ff-482f-bd84-3e91de3c4213.jpeg', label: 'Классика' },
   { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/e178d934-4c3c-4de0-9a25-338874b7cd00.jpeg', label: 'Низкий фейд' },
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/7b350b2a-e80e-4318-9d30-71d7dfbc5b70.jpeg', label: 'Интерьер' },
+  { src: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/2905ddae-34e4-45fa-86c9-d57aceb0ad47.jpeg', label: 'Рабочие места' },
 ];
 
 const nav = [
@@ -83,32 +88,67 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-        <div className="container grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-6">с 2014 года</p>
-            <h1 className="font-display font-600 uppercase leading-[0.95] text-6xl md:text-8xl tracking-tight mb-8">
-              Класси<br />ческий<br /><span className="text-accent">стиль</span>
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-md mb-10 text-balance">
-              Барбершоп «КласикО» — чистая эстетика и точные линии. Никакой суеты, только вы, мастер и идеальная стрижка.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button onClick={() => scrollTo('booking')} size="lg"
-                className="rounded-none font-display uppercase tracking-widest bg-foreground text-background hover:bg-foreground/90 h-14 px-10">
-                Записаться
-              </Button>
-              <Button onClick={() => scrollTo('services')} size="lg" variant="outline"
-                className="rounded-none font-display uppercase tracking-widest border-foreground h-14 px-10">
-                Услуги
-              </Button>
+      <section id="top" className="relative min-h-screen flex items-end pb-20 pt-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={HERO_IMG} alt="Интерьер КласикО" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        </div>
+        <div className="container relative z-10 animate-fade-in">
+          <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-6">Барбершоп · с 2014 года</p>
+          <h1 className="font-display font-600 uppercase leading-[0.9] text-6xl md:text-9xl tracking-tight mb-8 text-white">
+            Класси<br />ческий<br /><span className="text-accent">стиль</span>
+          </h1>
+          <p className="text-white/70 text-lg max-w-md mb-10 text-balance">
+            Чистая эстетика и точные линии. Никакой суеты — только вы, мастер и идеальная стрижка.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button onClick={() => scrollTo('booking')} size="lg"
+              className="rounded-none font-display uppercase tracking-widest bg-accent text-accent-foreground hover:bg-accent/90 h-14 px-10">
+              Записаться
+            </Button>
+            <Button onClick={() => scrollTo('services')} size="lg"
+              className="rounded-none font-display uppercase tracking-widest bg-transparent border border-white text-white hover:bg-white hover:text-foreground h-14 px-10">
+              Услуги
+            </Button>
+          </div>
+        </div>
+        <div className="absolute bottom-8 right-8 bg-accent text-accent-foreground p-5 hidden md:block">
+          <p className="font-display text-4xl font-700 leading-none">4.9</p>
+          <p className="text-xs uppercase tracking-widest mt-1">2 400+ отзывов</p>
+        </div>
+      </section>
+
+      {/* О НАС */}
+      <section className="py-24 md:py-32 border-t border-border">
+        <div className="container grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="aspect-[3/4] overflow-hidden">
+              <img src={EXTERIOR_DAY} alt="Вход в барбершоп" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="aspect-[3/4] overflow-hidden mt-12">
+              <img src={EXTERIOR_NIGHT} alt="Барбершоп ночью" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
-          <div className="relative h-[420px] md:h-[600px] animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0 }}>
-            <img src={HERO_IMG} alt="Мастер за работой" className="w-full h-full object-cover object-top" />
-            <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 hidden md:block">
-              <p className="font-display text-4xl font-700">4.9</p>
-              <p className="text-xs uppercase tracking-widest">2 400+ отзывов</p>
+          <div className="md:pl-8">
+            <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Наше место</p>
+            <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight mb-8">О нас</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              КласикО — мужской барбершоп с атмосферой настоящего мужского клуба. Стильный интерьер, профессиональные мастера и внимание к каждой детали.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              Мы работаем только с проверенными инструментами и профессиональной косметикой. Каждый клиент уходит с идеальным результатом.
+            </p>
+            <div className="grid grid-cols-3 gap-6 border-t border-border pt-8">
+              {[
+                { num: '10+', label: 'лет опыта' },
+                { num: '5 000+', label: 'довольных клиентов' },
+                { num: '3', label: 'мастера' },
+              ].map((s) => (
+                <div key={s.label}>
+                  <p className="font-display text-3xl font-600 text-accent">{s.num}</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">{s.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -146,7 +186,7 @@ const Index = () => {
             <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-4">Наши работы</p>
             <h2 className="font-display font-600 uppercase text-5xl md:text-6xl tracking-tight">Галерея</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {gallery.map((item, i) => (
               <div key={i} className="relative overflow-hidden aspect-[3/4] group">
                 <img src={item.src} alt={item.label}
