@@ -42,7 +42,7 @@ const Index = () => {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <button onClick={() => scrollTo('top')} className="font-display text-2xl font-700 tracking-[0.3em] uppercase">
-            Forma
+            КласикО
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((n) => (
@@ -81,10 +81,10 @@ const Index = () => {
           <div className="animate-fade-in">
             <p className="font-display uppercase tracking-[0.4em] text-accent text-sm mb-6">с 2014 года</p>
             <h1 className="font-display font-600 uppercase leading-[0.95] text-6xl md:text-8xl tracking-tight mb-8">
-              Форма<br />имеет<br /><span className="text-accent">значение</span>
+              Класси<br />ческий<br /><span className="text-accent">стиль</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mb-10 text-balance">
-              Барбершоп с чистой эстетикой и точными линиями. Никакой суеты — только вы, мастер и идеальная стрижка.
+              Барбершоп «КласикО» — чистая эстетика и точные линии. Никакой суеты, только вы, мастер и идеальная стрижка.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button onClick={() => scrollTo('booking')} size="lg"
@@ -234,8 +234,8 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="bg-foreground text-background/60 py-12 border-t border-background/10">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="font-display text-xl tracking-[0.3em] uppercase text-background">Forma</span>
-          <p className="text-sm">© 2026 Барбершоп FORMA. Все права защищены.</p>
+          <span className="font-display text-xl tracking-[0.3em] uppercase text-background">КласикО</span>
+          <p className="text-sm">© 2026 Барбершоп «КласикО». Все права защищены.</p>
           <div className="flex gap-5">
             {['Instagram', 'Send', 'Youtube'].map((s) => (
               <button key={s} className="hover:text-accent transition-colors"><Icon name={s} size={20} /></button>
