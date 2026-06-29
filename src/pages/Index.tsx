@@ -49,7 +49,7 @@ const masters = [
     desc: 'Стрижка от 1 800 ₽',
     rating: '5.0',
     reviews: '78 оценок',
-    initials: 'И',
+    img: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/9a9cd6d3-a43d-4538-a2eb-af57b45a96e7.jpg',
   },
   {
     name: 'Аваз «Álvarez»',
@@ -57,7 +57,7 @@ const masters = [
     desc: 'Стрижка от 2 300 ₽',
     rating: '5.0',
     reviews: '84 оценки',
-    initials: 'А',
+    img: 'https://cdn.poehali.dev/projects/68577908-3c1d-4650-a2f9-8cffcc0f0be8/bucket/13f185d0-68a3-49ec-880b-95a6bd57848e.jpg',
   },
 ];
 
@@ -238,8 +238,8 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {masters.map((m) => (
               <div key={m.name} className="bg-background border border-border p-8 flex flex-col items-center text-center hover:border-foreground transition-colors">
-                <div className="w-24 h-24 rounded-full bg-foreground text-background flex items-center justify-center font-display text-4xl mb-6">
-                  {m.initials}
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-border">
+                  <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top" />
                 </div>
                 <h3 className="font-display uppercase text-xl tracking-wide mb-1">{m.name}</h3>
                 <p className="text-muted-foreground text-sm mb-1">{m.role}</p>
